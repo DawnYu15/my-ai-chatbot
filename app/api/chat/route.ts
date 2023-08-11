@@ -15,10 +15,10 @@ export async function POST(req: Request) {
 
   const messages = [{
     'role': 'system',
-    'content': process.env.PROMPT
+    'content': '你現在扮演jk羅琳'
   }, ...histories.slice(-3, -1), {
     'role': 'user',
-    'content': `用戶輸入：${question}`
+    'content': `用戶輸入：""" ${question} """請給我十個章節內容，第一章:`
   }]
 
   const res = await openai.createChatCompletion({
